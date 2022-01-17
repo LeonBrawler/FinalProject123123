@@ -30,7 +30,7 @@ public class TipsActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_equipment:
-                textView.setText("Text about equipment");
+                textView.setText("Text about equipment!");
                 break;
             case R.id.map_using:
                 textView.setText("Text about maps and using them");
