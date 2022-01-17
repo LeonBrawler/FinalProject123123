@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FinalProject</string>
+    <string name="weather">Weather</string>
+    <string name="city_info">Enter your city</string>
+    <string name="confirm_btn">Confirm</string>
+    <string name="no_user_input">No text entered</string>
+    <string name="title">TravelGuide</string>
+    <string name="map">Map</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="tips_for_adventurers">Tips for Adventurers</string>
+    <string name="putting_up_a_tent">Putting up a tent</string>
+    <string name="using_a_map">Using a map</string>
+    <string name="equipment">Equipment</string>
+    <string name="tents">Tents</string>
+    <string name="mushrooms">Mushrooms</string>
+    <string name="bonfire">Bonfire</string>
+</resources>
