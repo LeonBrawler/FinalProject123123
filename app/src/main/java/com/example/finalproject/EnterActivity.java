@@ -21,7 +21,7 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
         Button toTipsBtn;
         toWeatherBtn = findViewById(R.id.toWeatherBtn);
         toWeatherBtn.setOnClickListener(this);
-        toTipsBtn = findViewById(R.id.toMapBtn);
+        toTipsBtn = findViewById(R.id.toTipsBtn);
         toTipsBtn.setOnClickListener(this);
     }
 
@@ -33,7 +33,7 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
             case R.id.toWeatherBtn:
                 goToWeather();
                 break;
-            case R.id.toMapBtn:
+            case R.id.toTipsBtn:
                 gotoTips();
                 break;
         }
@@ -45,7 +45,7 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void gotoTips(){
-        Intent switchActivityIntent = new Intent(this, TipsActivity.class);
-        startActivity(switchActivityIntent);
+        Intent switchActivityIntent1 = new Intent(this, TipsActivity.class);
+        startActivity(switchActivityIntent1);
     }
 }

@@ -14,4 +14,6 @@
     <string name="tents">Tents</string>
     <string name="mushrooms">Mushrooms</string>
     <string name="bonfire">Bonfire</string>
+    <string name="tips">Tips</string>
+    <string name="button">Button</string>
 </resources>

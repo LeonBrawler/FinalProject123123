@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TipsActivity extends AppCompatActivity implements View.OnClickListener {
-    public TextView textView = new TextView(this);
-    ScrollView scrollView;
+    public TextView textView;
+    public TextView tipsText;
+    public String tip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,13 @@ public class TipsActivity extends AppCompatActivity implements View.OnClickListe
         Button buttonTents = findViewById(R.id.tents);
         Button buttonMushrooms = findViewById(R.id.mushrooms);
         Button buttonBonfire = findViewById(R.id.bonfire);
-        scrollView = findViewById(R.id.scrollView);
+        buttonEquipment.setOnClickListener(this);
+        buttonMapUsing.setOnClickListener(this);
+        buttonTents.setOnClickListener(this);
+        buttonMushrooms.setOnClickListener(this);
+        buttonBonfire.setOnClickListener(this);
+        TextView tipsText = findViewById(R.id.tipsView);
+
     }
 
 
@@ -30,21 +38,26 @@ public class TipsActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button_equipment:
-                textView.setText("Text about equipment!");
+                Toast toast = Toast.makeText(getApplicationContext(), "Equipment", Toast.LENGTH_LONG);
+                toast.show();
                 break;
             case R.id.map_using:
-                textView.setText("Text about maps and using them");
+                Toast toast1 = Toast.makeText(getApplicationContext(), "maps", Toast.LENGTH_LONG);
+                toast1.show();
                 break;
             case R.id.tents:
-                textView.setText("Text about tents");
+                Toast toast2 = Toast.makeText(getApplicationContext(), "tents", Toast.LENGTH_LONG);
+                toast2.show();
                 break;
             case R.id.mushrooms:
-                textView.setText("Text about mushrooms");
+                Toast toast3 = Toast.makeText(getApplicationContext(), "mushrooms", Toast.LENGTH_LONG);
+                toast3.show();
                 break;
             case R.id.bonfire:
-                textView.setText("Text about bonfire");
+                Toast toast4 = Toast.makeText(getApplicationContext(), "bonfire", Toast.LENGTH_LONG);
+                toast4.show();
                 break;
         }
-        scrollView.addView(textView);
+
     }
 }
