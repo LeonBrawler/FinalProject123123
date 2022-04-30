@@ -13,7 +13,8 @@
         android:id="@+id/TravelGuide"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200sp"
+        android:layout_marginTop="200dp"
+        android:backgroundTint="#B89E9E"
         android:fontFamily="@font/happy_monkey"
         android:text="@string/title"
         android:textColor="@color/textColor"
@@ -32,29 +33,64 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/hiking" />
 
+    <!-- Go to weather -->
     <Button
-        android:id="@+id/toWeatherBtn"
+        android:id="@+id/to_weather_btn"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
-        android:backgroundTint="@color/screenBtnColor"
-        android:fontFamily="sans-serif-medium"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#825A5A5A"
+        android:fontFamily="@font/opensans_bold"
         android:text="@string/weather"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TravelGuide" />
 
+    <!-- Go to tips -->
     <Button
-        android:id="@+id/toTipsBtn"
+        android:id="@+id/to_tips_btn"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/screenBtnColor"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#825A5A5A"
+        android:fontFamily="@font/opensans_bold"
         android:text="@string/tips"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toWeatherBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/to_weather_btn" />
+
+    <!-- Go to game -->
+    <Button
+        android:id="@+id/to_game_btn"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#825A5A5A"
+        android:fontFamily="@font/opensans_bold"
+        android:text="@string/game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_tips_btn" />
+
+    <!-- Go to maps -->
+    <Button
+        android:id="@+id/to_maps_btn"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="115dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#825A5A5A"
+        android:fontFamily="@font/opensans_bold"
+        android:text="@string/map_"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_game_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@
     <string name="weather">Weather</string>
     <string name="city_info">Enter your city</string>
     <string name="confirm_btn">Confirm</string>
-    <string name="no_user_input">No text entered</string>
+    <string name="no_user_input">No city name entered</string>
     <string name="title">TravelGuide</string>
     <string name="map">Map</string>
     <string name="title_activity_maps">MapsActivity</string>
@@ -16,4 +16,21 @@
     <string name="bonfire">Bonfire</string>
     <string name="tips">Tips</string>
     <string name="button">Button</string>
+    <string name="tent">Tent</string>
+    <string name="scrollview_tips_text">Press buttons to show the info</string>
+    <string name="contentdescription">contentDescription</string>
+    <string name="food">Food</string>
+    <string name="textview">TextView</string>
+    <string name="compass">compass</string>
+    <string name="map_">map</string>
+    <string name="compass_activity">COMPASS ACTIVITY</string>
+    <string name="game">game</string>
+    <string name="text_view_tips">Press the buttons for info</string>
+    <string name="common_info">common info</string>
+    <string name="temperature">Temperature</string>
+    <string name="border_temp">Min-Max Temp</string>
+    <string name="humidity">Humidity</string>
+    <string name="description">Description</string>
+    <string name="pressure">Pressure</string>
+    <string name="wind_speed">Wind speed</string>
 </resources>

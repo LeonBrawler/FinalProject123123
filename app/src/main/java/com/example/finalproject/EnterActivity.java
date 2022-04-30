@@ -7,11 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class EnterActivity extends AppCompatActivity implements View.OnClickListener {
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +16,20 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_enter);
         Button toWeatherBtn;
         Button toTipsBtn;
-        toWeatherBtn = findViewById(R.id.toWeatherBtn);
+        Button toMapsBtn;
+        Button toCompassBtn;
+
+        toWeatherBtn = findViewById(R.id.to_weather_btn);
         toWeatherBtn.setOnClickListener(this);
-        toTipsBtn = findViewById(R.id.toTipsBtn);
+
+        toTipsBtn = findViewById(R.id.to_tips_btn);
         toTipsBtn.setOnClickListener(this);
+
+        toMapsBtn = findViewById(R.id.to_maps_btn);
+        toMapsBtn.setOnClickListener(this);
+
+        toCompassBtn = findViewById(R.id.to_game_btn);
+        toCompassBtn.setOnClickListener(this);
     }
 
 
@@ -30,22 +37,38 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case R.id.toWeatherBtn:
+            case R.id.to_weather_btn:
                 goToWeather();
                 break;
-            case R.id.toTipsBtn:
-                gotoTips();
+            case R.id.to_tips_btn:
+                goToTips();
+                break;
+            case R.id.to_maps_btn:
+                goToMaps();
+                break;
+            case R.id.to_game_btn:
+                goToGame();
                 break;
         }
     }
-
+    Intent switchActivityIntent;
     private void goToWeather(){
-        Intent switchActivityIntent = new Intent(this, MainActivity.class);
+        switchActivityIntent = new Intent(this, WeatherActivity.class);
         startActivity(switchActivityIntent);
     }
 
-    private void gotoTips(){
-        Intent switchActivityIntent1 = new Intent(this, TipsActivity.class);
-        startActivity(switchActivityIntent1);
+    private void goToTips(){
+        switchActivityIntent = new Intent(this, TipsActivity.class);
+        startActivity(switchActivityIntent);
+    }
+
+    private void goToMaps(){
+        switchActivityIntent = new Intent(this, MapsActivity.class);
+        startActivity(switchActivityIntent);
+    }
+
+    private void goToGame(){
+        switchActivityIntent = new Intent(this, GameActivity.class);
+        startActivity(switchActivityIntent);
     }
 }

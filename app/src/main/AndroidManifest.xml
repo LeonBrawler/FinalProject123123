@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject" >
+
         <activity
             android:name=".TipsActivity"
             android:exported="false" />
@@ -27,8 +28,13 @@
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
         <activity
-            android:name=".MainActivity"
+            android:name=".MapsActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".WeatherActivity"
+            android:exported="false" />
+
         <activity
             android:name=".EnterActivity"
             android:exported="true" >
@@ -37,6 +43,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
     </application>
-
 </manifest>
