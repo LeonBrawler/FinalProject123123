@@ -18,10 +18,9 @@
     <string name="button">Button</string>
     <string name="tent">Tent</string>
     <string name="scrollview_tips_text">Press buttons to show the info</string>
-    <string name="contentdescription">contentDescription</string>
+    <string name="content_description">contentDescription</string>
     <string name="food">Food</string>
     <string name="textview">TextView</string>
-    <string name="compass">compass</string>
     <string name="map_">map</string>
     <string name="compass_activity">COMPASS ACTIVITY</string>
     <string name="game">game</string>
@@ -33,4 +32,7 @@
     <string name="description">Description</string>
     <string name="pressure">Pressure</string>
     <string name="wind_speed">Wind speed</string>
+    <string name="start">Start</string>
+    <string name="flashlight">Flashlight</string>
+    <string name="compass">compass</string>
 </resources>

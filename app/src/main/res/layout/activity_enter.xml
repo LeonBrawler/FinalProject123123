@@ -37,42 +37,46 @@
     <Button
         android:id="@+id/to_weather_btn"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="115dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_marginTop="50dp"
         android:backgroundTint="#825A5A5A"
         android:fontFamily="@font/opensans_bold"
         android:text="@string/weather"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TravelGuide" />
 
     <!-- Go to tips -->
+
     <Button
         android:id="@+id/to_tips_btn"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="115dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
         android:backgroundTint="#825A5A5A"
         android:fontFamily="@font/opensans_bold"
         android:text="@string/tips"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/to_weather_btn" />
 
-    <!-- Go to game -->
+    <!-- Go to flashlight -->
     <Button
-        android:id="@+id/to_game_btn"
+        android:id="@+id/to_flashlight_btn"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="115dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
         android:backgroundTint="#825A5A5A"
         android:fontFamily="@font/opensans_bold"
-        android:text="@string/game"
+        android:text="@string/flashlight"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,15 +86,32 @@
     <Button
         android:id="@+id/to_maps_btn"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="115dp"
+        android:layout_width="140dp"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
         android:backgroundTint="#825A5A5A"
         android:fontFamily="@font/opensans_bold"
         android:text="@string/map_"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/to_game_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/to_flashlight_btn" />
+
+    <!-- Button to compass -->
+    <Button
+        android:id="@+id/to_compass_btn"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#825A5A5A"
+        android:fontFamily="@font/opensans_bold"
+        android:text="@string/compass"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/to_maps_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

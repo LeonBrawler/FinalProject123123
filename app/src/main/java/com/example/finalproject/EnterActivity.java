@@ -17,6 +17,7 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
         Button toWeatherBtn;
         Button toTipsBtn;
         Button toMapsBtn;
+        Button toFlashlightBtn;
         Button toCompassBtn;
 
         toWeatherBtn = findViewById(R.id.to_weather_btn);
@@ -28,7 +29,10 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
         toMapsBtn = findViewById(R.id.to_maps_btn);
         toMapsBtn.setOnClickListener(this);
 
-        toCompassBtn = findViewById(R.id.to_game_btn);
+        toFlashlightBtn = findViewById(R.id.to_flashlight_btn);
+        toFlashlightBtn.setOnClickListener(this);
+
+        toCompassBtn = findViewById(R.id.to_compass_btn);
         toCompassBtn.setOnClickListener(this);
     }
 
@@ -46,11 +50,15 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
             case R.id.to_maps_btn:
                 goToMaps();
                 break;
-            case R.id.to_game_btn:
-                goToGame();
+            case R.id.to_flashlight_btn:
+                goToFlashlight();
+                break;
+            case R.id.to_compass_btn:
+                goToCompass();
                 break;
         }
     }
+
     Intent switchActivityIntent;
     private void goToWeather(){
         switchActivityIntent = new Intent(this, WeatherActivity.class);
@@ -67,8 +75,13 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
         startActivity(switchActivityIntent);
     }
 
-    private void goToGame(){
-        switchActivityIntent = new Intent(this, GameActivity.class);
+    private void goToFlashlight(){
+        switchActivityIntent = new Intent(this, FlashlightActivity.class);
+        startActivity(switchActivityIntent);
+    }
+
+    private void goToCompass(){
+        switchActivityIntent = new Intent(this, CompassActivity.class);
         startActivity(switchActivityIntent);
     }
 }
