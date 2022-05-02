@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#23774C"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/get_info_btn"
+        android:layout_width="127dp"
+        android:layout_height="49dp"
+        android:backgroundTint="#027776"
+        android:fontFamily="@font/opensans_bold"
+        android:text="@string/get_info"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/covid_info_view"
+        android:layout_width="288dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/opensans_regular"
+        android:gravity="center_horizontal"
+        android:text="@string/covid_res_text"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/get_info_btn" />
+
+    <EditText
+        android:id="@+id/country_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:ems="10"
+        android:fontFamily="@font/opensans_regular"
+        android:inputType="textPersonName"
+        android:text="@string/country"
+        android:textColor="#E6222121"
+        app:layout_constraintBottom_toTopOf="@+id/get_info_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/covid_title"
+        android:layout_width="164dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="130dp"
+        android:fontFamily="@font/happy_monkey"
+        android:gravity="center"
+        android:text="@string/covid_info"
+        android:textColor="#DF000000"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="59dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/covid_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/covid" />
+</androidx.constraintlayout.widget.ConstraintLayout>

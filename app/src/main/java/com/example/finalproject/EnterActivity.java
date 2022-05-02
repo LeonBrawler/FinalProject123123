@@ -19,6 +19,7 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
         Button toMapsBtn;
         Button toFlashlightBtn;
         Button toCompassBtn;
+        Button toCovidInfoBtn;
 
         toWeatherBtn = findViewById(R.id.to_weather_btn);
         toWeatherBtn.setOnClickListener(this);
@@ -34,6 +35,9 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
 
         toCompassBtn = findViewById(R.id.to_compass_btn);
         toCompassBtn.setOnClickListener(this);
+
+        toCovidInfoBtn = findViewById(R.id.to_covid_info);
+        toCovidInfoBtn.setOnClickListener(this);
     }
 
 
@@ -55,6 +59,9 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.to_compass_btn:
                 goToCompass();
+                break;
+            case R.id.to_covid_info:
+                goToCovidInfo();
                 break;
         }
     }
@@ -82,6 +89,11 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
 
     private void goToCompass(){
         switchActivityIntent = new Intent(this, CompassActivity.class);
+        startActivity(switchActivityIntent);
+    }
+
+    private void goToCovidInfo(){
+        switchActivityIntent = new Intent(this, CovidActivity.class);
         startActivity(switchActivityIntent);
     }
 }

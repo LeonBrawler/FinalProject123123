@@ -35,4 +35,9 @@
     <string name="start">Start</string>
     <string name="flashlight">Flashlight</string>
     <string name="compass">compass</string>
+    <string name="covid_res_text">Covid Info will appear here</string>
+    <string name="confirm">Confirm</string>
+    <string name="get_info">get info</string>
+    <string name="country">Country</string>
+    <string name="covid_info">Covid Info</string>
 </resources>

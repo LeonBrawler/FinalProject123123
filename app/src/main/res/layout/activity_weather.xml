@@ -4,36 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700"
+    android:background="#23774C"
     tools:context=".WeatherActivity">
 
     <TextView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45sp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/happy_monkey"
         android:text="@string/weather"
-        android:textColor="@color/textColor"
+        android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
         android:id="@+id/user_field"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="50sp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="80dp"
         android:height="48dp"
         android:backgroundTint="#5B58AC"
         android:ems="10"
         android:fontFamily="@font/opensans_regular"
         android:hint="@string/city_info"
         android:inputType="textPersonName"
-        android:textColor="@color/textColor"
+        android:textColor="@color/white"
+        android:textColorHint="#2C2C2C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
@@ -62,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/happy_monkey"
-        android:textColor="@color/textColor"
+        android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -150,4 +151,14 @@
         app:layout_constraintStart_toStartOf="@+id/current_temperature_cb"
         app:layout_constraintTop_toBottomOf="@+id/current_temperature_cb"
         tools:ignore="UsingOnClickInXml" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="70dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/weather_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

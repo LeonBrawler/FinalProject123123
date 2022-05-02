@@ -22,7 +22,7 @@ public class FlashlightActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.flashlight_activity);
+        setContentView(R.layout.activity_flashlight);
         ImageView toggleButton = findViewById(R.id.toggle_flashlight);
         hasCameraFlash = getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH);
         toggleButton.setOnClickListener(new View.OnClickListener() {
