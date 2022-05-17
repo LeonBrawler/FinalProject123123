@@ -31,7 +31,7 @@ public class CovidActivity extends AppCompatActivity{
 
 
     @SuppressLint("SimpleDateFormat")
-    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-dd-MM");
+    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     String strDate = formatter.format(dayBeforeDate);
 
     @Override
@@ -60,14 +60,18 @@ public class CovidActivity extends AppCompatActivity{
                     public void onResponse(Call<CovidHistory> call, Response<CovidHistory> response) {
                         CovidHistory  covidHistory = (CovidHistory)response.body();
                         Log.d("RESPONSE", country + strDate);
-                        covidInfo.setText("Total Cases: " + covidHistory.getResponse().get(0).getCases().getTotal() + "\n Total Deaths: " +
-                               covidHistory.getResponse().get(0).getDeaths().getTotal());
+                        assert covidHistory != null;
+                        String covidInfoText = "Covid Info: \n" + "Total cases: " + covidHistory.getResponse().get(0).getCases().getTotal() +
+                                "\nRecent cases: " + covidHistory.getResponse().get(0).getCases().getNew() +
+                                "\nTotal Deaths: " + covidHistory.getResponse().get(0).getDeaths().getTotal() +
+                                "\nRecent deaths: " + covidHistory.getResponse().get(0).getDeaths().getNew();
+                        covidInfo.setText(covidInfoText);
                     }
 
                     @Override
                     public void onFailure(Call<CovidHistory> call, Throwable t) {
                         Log.d("ERROR", "onFailure called");
-                        Toast.makeText(CovidActivity.this, "Check the country for mistakes", Toast.LENGTH_LONG).show();
+                        Toast.makeText(CovidActivity.this, "Check the 'country' field for mistakes", Toast.LENGTH_LONG).show();
                     }
                 });
             }

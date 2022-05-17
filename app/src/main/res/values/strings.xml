@@ -40,4 +40,5 @@
     <string name="get_info">get info</string>
     <string name="country">Country</string>
     <string name="covid_info">Covid Info</string>
+    <string name="compass_">Compass</string>
 </resources>

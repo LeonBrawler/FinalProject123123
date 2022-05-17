@@ -3,6 +3,7 @@
     package="com.example.finalproject" >
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CONTROL_DEVICE_LIGHTS" />
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -16,7 +17,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/travel_guide"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FinalProject" >
+        android:theme="@style/DemoTheme" >
 
         <activity
             android:name=".TipsActivity"

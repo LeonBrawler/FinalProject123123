@@ -48,6 +48,7 @@ public class FlashlightActivity extends AppCompatActivity {
         CameraManager cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
         String camId = cameraManager.getCameraIdList()[0];
         cameraManager.setTorchMode(camId, flashOn);
+        //cameraManager.
     }
 
 

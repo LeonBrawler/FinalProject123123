@@ -2,6 +2,7 @@ package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class EnterActivity extends AppCompatActivity implements View.OnClickList
         Button toFlashlightBtn;
         Button toCompassBtn;
         Button toCovidInfoBtn;
+
 
         toWeatherBtn = findViewById(R.id.to_weather_btn);
         toWeatherBtn.setOnClickListener(this);

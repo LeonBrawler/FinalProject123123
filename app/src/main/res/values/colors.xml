@@ -11,5 +11,7 @@
     <color name="light_purple">#73638F</color>
     <color name="royal_blue">#246EE9</color>
     <color name="scarlet_red">#FF2400</color>
-
+    <color name="colorPrimary">#FF2400</color>
+    <color name="colorOfStatusBar">#23774C</color>
+    <color name="colorAccent">#000000</color>
 </resources>
