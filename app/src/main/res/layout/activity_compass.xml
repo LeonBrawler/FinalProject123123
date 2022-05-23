@@ -17,7 +17,7 @@
         android:background="#23774C"
         android:backgroundTint="#23774C"
         android:foregroundTint="#23774C"
-        android:src="@drawable/compass"
+        android:src="@drawable/compass_nobg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -26,13 +26,13 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="179dp"
+        android:layout_width="wrap_content"
         android:layout_height="79dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/happy_monkey"
         android:gravity="center"
         android:text="@string/compass_"
-        android:textSize="30sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

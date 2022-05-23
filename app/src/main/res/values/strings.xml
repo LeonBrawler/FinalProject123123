@@ -4,10 +4,10 @@
     <string name="city_info">Enter your city</string>
     <string name="confirm_btn">Confirm</string>
     <string name="no_user_input">No city name entered</string>
-    <string name="title">TravelGuide</string>
+    <string name="title">Travide</string>
     <string name="map">Map</string>
     <string name="title_activity_maps">MapsActivity</string>
-    <string name="tips_for_adventurers">Tips for Adventurers</string>
+    <string name="tips_">Tips. Info</string>
     <string name="putting_up_a_tent">Putting up a tent</string>
     <string name="using_a_map">Using a map</string>
     <string name="equipment">Equipment</string>
@@ -40,5 +40,8 @@
     <string name="get_info">get info</string>
     <string name="country">Country</string>
     <string name="covid_info">Covid Info</string>
+    <string name="tipsadvices">TipsAdvices</string>
     <string name="compass_">Compass</string>
+    <string name="tips_and_advices"><![CDATA[Tips&Advices]]></string>
+    <string name="compass__">Compass</string>
 </resources>

@@ -1,10 +1,13 @@
 package com.example.finalproject;
 
+import static java.lang.Math.round;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -29,8 +32,8 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView resultInformation;
 
     // Booleans for checkboxes
-    boolean showCurrentTemperature, showTemperatureBorders,
-            showHumidity, showPressure, showDescription, showWindSpeed;
+    boolean showCurrentTemperature, showDescription,
+            showHumidity, showPressure, showWindSpeed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +46,13 @@ public class WeatherActivity extends AppCompatActivity {
         mainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(userField.getText().toString().trim().equals("")){
+                if(userField.getText(   ).toString().trim().equals("")){
                     Toast.makeText(WeatherActivity.this, R.string.no_user_input, Toast.LENGTH_LONG).show();
                 } else {
                     String city = userField.getText().toString();
-                    String key = "f48370c17dbd630c3e693a92455b5ef2";
-                    String url = "https://api.openweathermap.org/data/2.5/weather?q=" +
-                            city + "&appid=" + key + "&units=metric";
+
+                    String key = "1cb4254f89044ff2ba095133222205";
+                    String url = "https://api.weatherapi.com/v1/current.json?key=" + key + "&q=" + city + "&aqi=no";
                     new getURLData().execute(url);
                 }
             }
@@ -64,8 +67,8 @@ public class WeatherActivity extends AppCompatActivity {
             case R.id.current_temperature_cb:
                 showCurrentTemperature = checked;
                 break;
-            case R.id.border_temperature_cb:
-                showTemperatureBorders = checked;
+            case R.id.description_cb:
+                showDescription = checked;
                 break;
             case R.id.humidity_cb:
                 showHumidity = checked;
@@ -90,19 +93,22 @@ public class WeatherActivity extends AppCompatActivity {
             HttpURLConnection connection = null;
             BufferedReader reader = null;
             try {
+                Log.d("RESULT", "AAA");
                 URL url = new URL(strings[0]);
+                Log.d("RESULT", strings[0]);
                 connection = (HttpURLConnection) url.openConnection();
                 connection.connect();
-
+                Log.d("RESULT", "AAA");
                 InputStream stream = connection.getInputStream();
                 reader = new BufferedReader(new InputStreamReader(stream));
-
+                Log.d("RESULT", "AAA");
                 StringBuffer buffer = new StringBuffer();
                 String line = "";
 
                 while((line = reader.readLine()) != null){
                     buffer.append(line).append("\n");
                 }
+                Log.d("RESULT", "AAA");
                 return buffer.toString();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -128,29 +134,29 @@ public class WeatherActivity extends AppCompatActivity {
 
             try {
                 JSONObject jsonObject = new JSONObject(result);
-
+                Log.d("RESULT", result);
+                //resultInformation.setText(result);
                 // Receiving all data
-                double temperature = jsonObject.getJSONObject("main").getDouble("temp");
-                String description = "description"; //jsonObject.getJSONArray("weather").getString(0).;
-                double windSpeed = jsonObject.getJSONObject("wind").getDouble("speed");
-                double pressure = jsonObject.getJSONObject("main").getDouble("pressure");
-                double tempMin = jsonObject.getJSONObject("main").getDouble("temp_min");
-                double tempMax = jsonObject.getJSONObject("main").getDouble("temp_max");
-                double humidity = jsonObject.getJSONObject("main").getDouble("humidity");
+                String s = jsonObject.getJSONObject("location").getString("name");
+                String description = jsonObject.getJSONObject("current").getJSONObject("condition").getString("text");
+                double temperature = jsonObject.getJSONObject("current").getDouble("temp_c");
+                double windSpeed = round(jsonObject.getJSONObject("current").getDouble("wind_kph") * 5 / 18 * 100.0) / 100.0;
+                double pressure = jsonObject.getJSONObject("current").getDouble("pressure_mb");
+                double humidity = jsonObject.getJSONObject("current").getDouble("humidity");
+                Log.d("RESULT", windSpeed+"\n" + temperature + "\n" + description + "\n" + pressure + "\n" + humidity);
 
-                String tempText = "Current Temperature: " + temperature + "°C";
-                String descriptionText = "Description: " + description;
+                String tempText = "Temperature: " + temperature + " °C";
+                String descriptionText = "Weather is: " + description;
                 String windSpeedText = "Wind speed: " + windSpeed + "m/s";
-                String pressureText = "Pressure: " + pressure + " atm";
-                String borderTempText = "Daily Temperature: " + tempMin + "°C" + " -- " + tempMax + "°C";
-                String humidityText = "Humidity: " + humidity;
-
+                String pressureText = "Pressure: " + pressure + " am";
+                String humidityText = "Humidity: " + humidity + "%";
+                Log.d("RESULT", tempText + "\n" + descriptionText + "\n" + windSpeedText + "\n" + pressureText + "\n" + humidityText + "\n");
                 String weatherText = "";
                 if (showCurrentTemperature){
                     weatherText += tempText + "\n";
                 }
-                if(showTemperatureBorders){
-                    weatherText += borderTempText + "\n";
+                if(showDescription){
+                    weatherText += descriptionText + "\n";
                 }
                 if(showWindSpeed){
                     weatherText += windSpeedText + "\n";
@@ -165,12 +171,9 @@ public class WeatherActivity extends AppCompatActivity {
                     Toast.makeText(WeatherActivity.this, "No Params selected", Toast.LENGTH_LONG).show();
                 }
                 resultInformation.setText(weatherText);
-
-//                "Temperature: " + jsonObject.getJSONObject("main").getDouble("temp")
-//                "Temperature: " + jsonObject.getJSONObject("main").getDouble("temp") + "°C"
-
-            } catch (JSONException e) {
-                e.printStackTrace();
+            } catch (JSONException  | NullPointerException e) {
+                Toast.makeText(getApplicationContext(), "Check input", Toast.LENGTH_LONG).show();
+                Log.d("EXCEPTION", e+"");
             }
         }
     }

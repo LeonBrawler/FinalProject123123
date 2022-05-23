@@ -15,6 +15,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -60,12 +61,15 @@ public class CovidActivity extends AppCompatActivity{
                     public void onResponse(Call<CovidHistory> call, Response<CovidHistory> response) {
                         CovidHistory  covidHistory = (CovidHistory)response.body();
                         Log.d("RESPONSE", country + strDate);
-                        assert covidHistory != null;
-                        String covidInfoText = "Covid Info: \n" + "Total cases: " + covidHistory.getResponse().get(0).getCases().getTotal() +
-                                "\nRecent cases: " + covidHistory.getResponse().get(0).getCases().getNew() +
-                                "\nTotal Deaths: " + covidHistory.getResponse().get(0).getDeaths().getTotal() +
-                                "\nRecent deaths: " + covidHistory.getResponse().get(0).getDeaths().getNew();
-                        covidInfo.setText(covidInfoText);
+                        try{
+                            String covidInfoText = "Covid Info: \n" + "Total cases: " + covidHistory.getResponse().get(0).getCases().getTotal() +
+                                    "\nRecent cases: " + covidHistory.getResponse().get(0).getCases().getNew() +
+                                    "\nTotal Deaths: " + covidHistory.getResponse().get(0).getDeaths().getTotal() +
+                                    "\nRecent deaths: " + covidHistory.getResponse().get(0).getDeaths().getNew();
+                            covidInfo.setText(covidInfoText);
+                        } catch (IndexOutOfBoundsException e) {
+                            Toast.makeText(getApplicationContext(), "Check input", Toast.LENGTH_LONG).show();
+                        }
                     }
 
                     @Override
