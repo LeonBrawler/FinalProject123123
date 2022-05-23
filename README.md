@@ -3,10 +3,10 @@ This is Travide App created by Me -- LeonBrawler
 It helps hikers from all over the globe receive important data they need during hiking
 
 1. Weather.
-Using API makes this super helpful. Shows you weather in a city you want to. Just type it in and choose the params!
+Using API makes this super helpful. Shows you weather in a city you want to go to. Just type it in and choose the params, such as humidity, temperature, pressure, short description, wind speed!
 
 2. Info
-Helpful for beginners. Just tips and advices about food, tents, bonfires, using compass
+Helpful for beginners. Just tips and advices about food, tents, bonfires, using compass, etc.
 
 3. Maps
 Allows you to watch the map and leave pins in interesting places. Pins are saved automatically when you create ones, so you don't have to worry about saving it
