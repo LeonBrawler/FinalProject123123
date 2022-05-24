@@ -7,6 +7,7 @@ import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -32,6 +33,11 @@ public class FlashlightActivity extends AppCompatActivity {
                 if(hasCameraFlash){
                     try {
                         toggleFlashlight(flashOn);
+                        if (flashOn){
+                            toggleButton.setImageResource(R.drawable.switch_off);
+                        } else {
+                            toggleButton.setImageResource(R.drawable.switch_on);
+                        }
                     } catch (CameraAccessException e) {
                         e.printStackTrace();
                     }

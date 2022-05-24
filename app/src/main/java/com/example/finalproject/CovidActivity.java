@@ -90,7 +90,7 @@ public class CovidActivity extends AppCompatActivity{
                     @Override
                     public void onFailure(Call<CovidHistory> call, Throwable t) {
                         Log.d("ERROR", "onFailure called");
-                        Toast.makeText(CovidActivity.this, "Check the 'country' field for mistakes", Toast.LENGTH_LONG).show();
+                        Toast.makeText(CovidActivity.this, "Check the 'country' field", Toast.LENGTH_LONG).show();
                     }
                 });
             }
