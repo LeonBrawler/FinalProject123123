@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FinalProject</string>
+    <string name="app_name">Travide</string>
     <string name="weather">Weather</string>
     <string name="city_info">Enter your city</string>
     <string name="confirm_btn">Confirm</string>

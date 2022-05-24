@@ -21,23 +21,39 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+
 public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, OnMapsSdkInitializedCallback {
 
     private GoogleMap mMap;
+    static DBManager dbManager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        dbManager = DBManager.getInstance(this);
+
         MapsInitializer.initialize(getApplicationContext(), Renderer.LATEST, this); // if not working -> delete this line
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        ArrayList<Result> markers = dbManager.getAllMarkerData();
+        for(int i = 0; i < markers.size(); ++i){
+            MarkerOptions marker = new MarkerOptions().
+                    position(new LatLng(Double.parseDouble(markers.get(i).posX), Double.parseDouble(markers.get(i).posY))).
+                    title("New Marker").
+                    draggable(true);
+            googleMap.addMarker(marker);
+        }
         googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(@NonNull LatLng point) {
@@ -46,15 +62,18 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         title("New Marker").
                         draggable(true);
                 googleMap.addMarker(marker);
+                dbManager.addMarkerToDb(point.latitude+"", point.longitude+"");
+                //add to db with strings: point.latitude, point.longitude
             }
         });
         googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(@NonNull Marker marker) {
-                marker.remove();//(marker.getPosition().latitude + ", " +  marker.getPosition().longitude);
-//                Toast.makeText(MapsActivity.this,
-//                        marker.getPosition().latitude + ", " +  marker.getPosition().longitude,
-//                        Toast.LENGTH_LONG).show();
+                LatLng markerPos = marker.getPosition();
+                Double longitude = markerPos.longitude;
+                Double latitude = markerPos.latitude;
+                dbManager.deleteMarkerFromDb(latitude+"", longitude+"");
+                marker.remove();
                 return false;
             }
         });

@@ -62,10 +62,25 @@ public class CovidActivity extends AppCompatActivity{
                         CovidHistory  covidHistory = (CovidHistory)response.body();
                         Log.d("RESPONSE", country + strDate);
                         try{
-                            String covidInfoText = "Covid Info: \n" + "Total cases: " + covidHistory.getResponse().get(0).getCases().getTotal() +
-                                    "\nRecent cases: " + covidHistory.getResponse().get(0).getCases().getNew() +
-                                    "\nTotal Deaths: " + covidHistory.getResponse().get(0).getDeaths().getTotal() +
-                                    "\nRecent deaths: " + covidHistory.getResponse().get(0).getDeaths().getNew();
+                            String totalCases = ""+covidHistory.getResponse().get(0).getCases().getTotal();
+                            String totalDeaths = ""+covidHistory.getResponse().get(0).getDeaths().getTotal();
+                            String newCases;
+                            String newDeaths;
+                            if (covidHistory.getResponse().get(0).getCases().getNew() == null){
+                                newCases = "0";
+                            } else {
+                                newCases = ""+covidHistory.getResponse().get(0).getCases().getNew();
+                            }
+                            if (covidHistory.getResponse().get(0).getDeaths().getNew() == null){
+                                newDeaths = "0";
+                            } else {
+                                newDeaths = ""+covidHistory.getResponse().get(0).getDeaths().getNew();
+                            }
+
+                            String covidInfoText = "Covid Info: \n" + "Total cases: " + totalCases +
+                                    "\nRecent cases: " + newCases +
+                                    "\nTotal Deaths: " + totalDeaths +
+                                    "\nRecent deaths: " + newDeaths;
                             covidInfo.setText(covidInfoText);
                         } catch (IndexOutOfBoundsException e) {
                             Toast.makeText(getApplicationContext(), "Check input", Toast.LENGTH_LONG).show();
