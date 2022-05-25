@@ -148,7 +148,7 @@ public class WeatherActivity extends AppCompatActivity {
                 String tempText = "Temperature: " + temperature + " °C";
                 String descriptionText = "Weather is: " + description;
                 String windSpeedText = "Wind speed: " + windSpeed + "m/s";
-                String pressureText = "Pressure: " + pressure + " am";
+                String pressureText = "Pressure: " + pressure + " mm Hg";
                 String humidityText = "Humidity: " + humidity + "%";
                 Log.d("RESULT", tempText + "\n" + descriptionText + "\n" + windSpeedText + "\n" + pressureText + "\n" + humidityText + "\n");
                 String weatherText = "";
