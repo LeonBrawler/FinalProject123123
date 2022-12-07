@@ -1,4 +1,4 @@
-This is Travide App created by Me -- LeonBrawler
+This is Travide App, created as a final project at Samsung IT School. Java Mobile Development Course
 
 It helps hikers from all over the globe receive important data they need during hiking
 
